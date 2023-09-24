@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+    <h1>Login</h1>
+    
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br><br>
+
+        <label for="captcha_input">CAPTCHA:</label>
+        <input type="text" name="captcha_input" id="captcha_input" required>
+        <br>
+        <img src="{{ url_for('captcha') }}" alt="CAPTCHA">
+        <br><br>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
